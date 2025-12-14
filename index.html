@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* TOP OFFER BAR */
+        .top-offer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* ABOUT US DROPDOWN */
+        .dropdown-menu {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            background: #fff;
+            list-style: none;
+            padding: 10px 0;
+            min-width: 230px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: none;
+            z-index: 800;
+        }
+
+        .dropdown-menu li { 
+            padding: 8px 20px;
+            margin: 0;
+        }
+
+        .dropdown-menu li a {
+            font-size: 14px;
+            font-weight: normal;
+            color: #333;
+        }
+
+        .dropdown-menu li:hover {
+            background: #f5f5f5;
+        }
+
+        li.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* HERO */
+        .hero {
+            width: 100%;
+        }
+
+        .hero-products img {
+            width: 100%;
+            display: block;
+            max-height: 550px;
+        }
+
+        /* PRODUCTS SECTION (WHEY - UNCHANGED) */
+        .products {
+            padding: 50px 40px;
+            background: #fff;
+        }
+
+        .products h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            position: relative;
+            text-align: center;
+        }
+
+        .product-card img {
+            height: 260px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 15px;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .price span {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+
+        .emi {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .product-card button {
+            background: #facc15;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background: #fbbf24;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #000;
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+
+        /* ===== CREATINE SECTION ===== */
+        .creatine {
+            padding: 50px 40px;
+            background: #f5f7f7;
+        }
+
+        .creatine h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .creatine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .creatine-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e6e6e6;
+        }
+
+        .creatine-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        .rating {
+            display: inline-block;
+            background: #1db9aa;
+            color: #fff;
+            padding: 3px 7px;
+            border-radius: 5px;
+            font-size: 13px;
+            margin: 10px 0;
+        }
+
+        .creatine-title {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .old {
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 6px;
+        }
+
+        .off {
+            color: #1db954;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .cart-btn {
+            width: 100%;
+            padding: 10px;
+            background: #e6f2f1;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            padding: 12px 15px;
+            border-radius: 50%;
+            color: white;
+            font-size: 26px;
+        }
+
+        /* MEDIA QUERIES FOR RESPONSIVENESS */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .hero-products img {
+                height: auto;
+                width: 100%;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .creatine-grid {
+                grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            }
+        }
+
+        /* Mobile-First Styling */
+        @media (max-width: 480px) {
+            .product-card h3 {
+                font-size: 14px;
+            }
+
+            .product-card button {
+                width: 100%;
+            }
+
+            .creatine-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-offer">
+        Use Coupon Code <b>"DISC5"</b> to get 5% off on all orders
+    </div>
+
+    <nav>
+        <div>
+            <img src="main.jpeg" height="60">
+        </div>
+
+        <ul>
+            <li>
+                <a href="about us.html">ABOUT US </a>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">PRODUCTS <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="protiens.html">whey protein</a></li>
+                    <li><a href="creapre.html"> CREATINE AND PRE-WORKOUTS </a></li>
+                </ul>
+            </li>
+            <li><a href="authenticate.html">AUTHENTICATE</a></li>
+            <li><a href="track-order.html">TRACK ORDER</a></li>
+            <li><a href="faq.html">FAQS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+        </ul>
+
+        <div>
+            <i class="fa-solid fa-magnifying-glass" style="margin-right:20px;"></i>
+            <a href="login.html"></a>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-products">
+            <img src="main.jpeg" alt="Main Page">
+        </div>
+    </section>
+
+    <!-- WHEY PROTEIN -->
+    <section class="products">
+        <h2>Whey Protein</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <span class="badge">Most Popular</span>
+                <img src="iso.jpg" alt="Avatar Isorich Protein">
+                <h3>Avatar isorich-protein| 3 Kg | Malai Kulfi</h3>
+                <p class="price">₹3291 <span>₹4229</span></p>
+                <p class="emi">or ₹1097 / Month</p>
+                <button>BUY NOW</button>
+            </div>
+
+            <div class="product-card">
+                <span class="badge">Most Popular</span>
+                <img src="biozyme.jpg" alt="Muscle Blaze Whey Protein">
+                <h3>Muscle Blaze Biozine Whey Protein | 2 Kg | Malai Kulfi</h3>
+                <p class="price">₹6227 <span>₹7699</span></p>
+                <p class="emi">or ₹2075 / Month</p>
+                <button>BUY NOW</button>
+            </div>
+
+            <div class="product-card">
+                <span class="badge">Most Popular</span>
+                <img src="gncc.webp" alt="Pure Isolate">
+                <h3>Pure Isolate 4 lbs (Zero Carb)</h3>
+                <p class="price">₹12145 <span>₹14639</span></p>
+                <p class="emi">or ₹4048 / Month</p>
+                <button>PRE BOOK</button>
+            </div>
+
+            <div class="product-card">
+                <span class="badge">Best for All</span>
+                <img src="tech.webp" alt="Weight Gainer Protein">
+                <h3>Weight Gainer Protein Powder | Chocolate Fudge Cake / 3 kg</h3>
+                <p class="price">₹2599 <span>₹3899</span></p>
+                <p class="emi">or ₹866 / Month</p>
+                <button>BUY NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREATINE -->
+    <section class="creatine">
+        <h2>Creatine</h2>
+        <div class="creatine-grid">
+            <div class="creatine-card">
+                <img src="creaa1.avif" alt="Wellcore Creatine">
+                <div class="rating">4.9 ★</div>
+                <p class="creatine-title">Wellcore - Pure Micronised Creatine Monohydrate</p>
+                <p><b>₹569</b> <span class="old">₹749</span> <span class="off">24% off</span></p>
+                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+            </div>
+
+            <div class="creatine-card">
+                <img src="creaa2.avif" alt="Wellcore Creatine 100g">
+                <div class="rating">4.9 ★</div>
+                <p class="creatine-title">Wellcore - Micronised Creatine (100g)</p>
+                <p><b>₹569</b> <span class="old">₹749</span> <span class="off">24% off</span></p>
+                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+            </div>
+
+            <div class="creatine-card">
+                <img src="creaa3.avif" alt="Wellcore Creatine Kiwi">
+                <div class="rating">4.9 ★</div>
+                <p class="creatine-title">Wellcore - Creatine | Kiwi Kick</p>
+                <p><b>₹569</b> <span class="old">₹749</span> <span class="off">24% off</span></p>
+                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
