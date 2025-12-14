@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            box-sizing: border-box;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            background: #d6b602;
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* CONTACT FORM CONTAINER */
+        .contact-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        /* Input Fields */
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            outline: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input:focus, textarea:focus {
+            border-color:#d6b602;
+            box-shadow: 0 0 5px rgba(29, 185, 84, 0.5);
+        }
+
+        /* Half width for some inputs */
+        input.half {
+            width: calc(50% - 10px);
+        }
+
+        textarea {
+            resize: none;
+            min-height: 150px;
+        }
+
+        /* Button Styling */
+        .submit-btn {
+            width: 200px;
+            padding: 12px 20px;
+            background: #d6b602;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease-in-out;
+            margin-top: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .submit-btn:hover {
+            background: #16b84a;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Icons inside input fields */
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        /* Styling for smaller screens */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 28px;
+            }
+
+            .contact-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <h1>Get in Touch with Us</h1>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-container">
+        <form action="#" method="POST">
+            <!-- Full Name -->
+            <div style="position: relative;">
+                <label for="fullname">Full Name *</label>
+                <i class="fa-solid fa-user input-icon"></i>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+
+            <!-- Mobile Number -->
+            <div style="position: relative;">
+                <label for="mobile">Mobile Number *</label>
+                <i class="fa-solid fa-phone input-icon"></i>
+                <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+            </div>
+
+            <!-- Email Address -->
+            <div style="position: relative;">
+                <label for="email">Email Address *</label>
+                <i class="fa-solid fa-envelope input-icon"></i>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- City -->
+            <div style="position: relative;">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city">
+            </div>
+
+            <!-- Message -->
+            <div style="width:100%; position: relative;">
+                <label for="message">Write your Message *</label>
+                <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
