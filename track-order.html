@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Order</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            background: #f2f2f2;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 40px;
+            font-weight: normal;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            padding: 15px 40px;
+            font-size: 14px;
+            color: #666;
+            background: #fff;
+        }
+
+        /* TRACK BOX */
+        .track-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #fff;
+        }
+
+        .track-box {
+            width: 500px;
+            padding: 40px;
+            border-radius: 25px;
+            border: 2px solid #f5b400;
+            text-align: center;
+        }
+
+        .track-box input {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .track-box button {
+            background: #f5b400;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .track-box button:hover {
+            background: #e0a800;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div>
+            <img src="main.jpeg" height="50">
+        </div>
+
+        <ul>
+            <li><a href="index.html">ABOUT US</a></li>
+            <li><a href="index.html">PRODUCTS</a></li>
+            <li><a href="authenticate.html">AUTHENTICATE</a></li>
+            <li><a href="track-order.html">TRACK ORDER</a></li>
+            <li><a href="#">FAQS</a></li>
+            <li><a href="#">CONTACT US</a></li>
+            <li><a href="#">MEDIA</a></li>
+        </ul>
+
+        <div>
+            <i class="fa-solid fa-magnifying-glass" style="margin-right:20px;"></i>
+            <i class="fa-regular fa-user" style="margin-right:20px;"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="page-header">
+        <h1>Track Order</h1>
+    </div>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        Home &nbsp;›&nbsp; Track Order
+    </div>
+
+    <!-- TRACK ORDER BOX -->
+    <div class="track-container">
+        <div class="track-box">
+            <input type="text" placeholder="Enter your Order ID">
+            <button>Track Order</button>
+        </div>
+    </div>
+
+</body>
+</html>
