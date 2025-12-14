@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creatine Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Creatine Section */
+        .creatine {
+            padding: 50px 40px;
+            background: #f5f7f7;
+        }
+
+        .creatine h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .creatine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .creatine-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e6e6e6;
+            text-align: center;
+        }
+
+        .creatine-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        .rating {
+            display: inline-block;
+            background: #1db9aa;
+            color: #fff;
+            padding: 3px 7px;
+            border-radius: 5px;
+            font-size: 13px;
+            margin: 10px 0;
+        }
+
+        .creatine-title {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .old {
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 6px;
+        }
+
+        .off {
+            color: #1db954;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .cart-btn {
+            width: 100%;
+            padding: 10px;
+            background: #e6f2f1;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .creatine-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+
+            .creatine-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="creatine">
+        <h2>Creatine</h2>
+        <div class="creatine-grid">
+            <!-- Creatine 1 -->
+            <div class="creatine-card">
+                <img src="wrath.webp" alt="Wellcore Creatine">
+                <div class="rating">4.9 ★</div>
+                <p class="creatine-title">MuscleBlaze Pre Workout WrathX</p>
+                <p><b>₹1069</b> <span class="old">₹1200</span> <span class="off">24% off</span></p>
+                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+            </div>
+
+            <!-- Creatine 2 -->
+            <div class="creatine-card">
+                <img src="gcre.webp" alt="Wellcore Creatine 100g">
+                <div class="rating">4.9 ★</div>
+                <p class="creatine-title">GNC Pro PerformanceCreatine Monohydrate Combo Powerful Muscle Pump for Intense Workout</p>
+                <p><b>₹1000</b> <span class="old">₹1249</span> <span class="off">24% off</span></p>
+                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+            </div>
+
+            <!-- Creatine 3 -->
+            <div class="creatine-card">
+                <img src="avcre.jpg" alt="Wellcore Creatine Kiwi">
+                <div class="rating">4.9 ★</div>
+                <p class="creatine-title">Avvatar Creatine Monohydrate | 100G | Unflavoured</p>
+                <p><b>₹569</b> <span class="old">₹749</span> <span class="off">24% off</span></p>
+                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+            </div>
+        </div>
+        <div class="creatine-grid">
+            <!-- Creatine 1 -->
+            <div class="creatine-card">
+                <img src="creaa1.avif" alt="Wellcore Creatine">
+                <div class="rating">4.9 ★</div>
+                <p class="creatine-title">Wellcore - Pure Micronised Creatine Monohydrate</p>
+                <p><b>₹569</b> <span class="old">₹749</span> <span class="off">24% off</span></p>
+                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+            </div>
+
+            <!-- Creatine 2 -->
+            <div class="creatine-card">
+                <img src="creaa2.avif" alt="Wellcore Creatine 100g">
+                <div class="rating">4.9 ★</div>
+                <p class="creatine-title">Wellcore - Micronised Creatine (100g)</p>
+                <p><b>₹569</b> <span class="old">₹749</span> <span class="off">24% off</span></p>
+                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+            </div>
+
+            <!-- Creatine 3 -->
+            <div class="creatine-card">
+                <img src="creaa3.avif" alt="Wellcore Creatine Kiwi">
+                <div class="rating">4.9 ★</div>
+                <p class="creatine-title">Wellcore - Creatine | Kiwi Kick</p>
+                <p><b>₹569</b> <span class="old">₹749</span> <span class="off">24% off</span></p>
+                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
