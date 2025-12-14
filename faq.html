@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff;
+            color: #222;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            padding: 60px 40px;
+            background: #f7f7f7;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .breadcrumb {
+            text-align: left;
+            padding: 15px 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* FAQ SECTION */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .faq-container h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        /* FAQ ITEM */
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .faq-answer p {
+            margin: 0 0 15px 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="page-header">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+
+    <div class="breadcrumb">
+        Home &nbsp;›&nbsp; FAQs
+    </div>
+
+    <!-- FAQ CONTENT -->
+    <div class="faq-container">
+        <h2>Account-Related</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do I need an Avvatar account to be able to shop?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>No, you can shop as a guest. However, creating an account helps you track orders and manage details easily.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How can I create my Avvatar account?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>You can create an account by clicking on the login icon and selecting “Register”.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How can I update my information if required?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>You can update your personal details from the “My Account” section after logging in.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Is my personal information kept private?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, all your personal data is securely stored and never shared with third parties.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                I have forgotten my password, how can I reset it?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Click on “Forgot Password” on the login page and follow the instructions sent to your email.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
